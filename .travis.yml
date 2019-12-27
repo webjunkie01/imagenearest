@@ -10,12 +10,11 @@ virtualenv:
   system_site_packages: false
 
 before_install:
-  - sudo apt-get install -qq g++-7
-  - sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-7 90
-
+  - sudo apt-get install -y build-essential cmake unzip pkg-config
+  - sudo apt-get install -y libxvidcore-dev libx264-dev
+  #- sudo -y apt-get install libatlas-base-dev gfortran
   # OpenCV dependencies - Details available at: http://docs.opencv.org/trunk/doc/tutorials/introduction/linux_install/linux_install.html
-  - sudo apt-get install -y build-essential
-  - sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
+  - sudo apt-get install -y git libgtk-3-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
   - sudo apt-get install -y python-dev python-numpy libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev
   
   - git clone https://github.com/opencv/opencv.git
